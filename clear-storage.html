@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage löschen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        button {
+            padding: 12px 24px;
+            background: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button:hover {
+            background: #357ae8;
+        }
+        .success {
+            color: #0f9d58;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗑️ Storage löschen</h1>
+        <p>Klicken Sie auf den Button, um alle gespeicherten Daten zu löschen:</p>
+        <button onclick="clearStorage()">LocalStorage & SessionStorage löschen</button>
+        <div id="result"></div>
+        <br><br>
+        <a href="/">← Zurück zur App</a>
+    </div>
+
+    <script>
+        function clearStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            document.getElementById('result').innerHTML = '<div class="success">✅ Alle Daten wurden gelöscht!<br>Sie können jetzt zur App zurückkehren.</div>';
+        }
+    </script>
+</body>
+</html>
+
